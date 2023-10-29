@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6b7e6081072844d978939d75833d58, type: 3}
+  m_Name: Fruit_Melon
+  m_EditorClassIdentifier: 
+  _fruitSprite: {fileID: -1157939201, guid: e8e9e413d1fa94d4db89fa5ccf520c6a, type: 3}
+  _fruitName: Melon
+  _cost: 12

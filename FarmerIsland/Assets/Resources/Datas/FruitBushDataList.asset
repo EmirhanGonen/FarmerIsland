@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b497a53e28bab4da6bbdf4c338c4bc, type: 3}
+  m_Name: FruitBushDataList
+  m_EditorClassIdentifier: 
+  _datas:
+  - {fileID: 11400000, guid: 510d3fa7143e4054a8be2bebed1b8240, type: 2}
+  - {fileID: 11400000, guid: 6bf87cf52a20c564da80289dc9d2874c, type: 2}
+  - {fileID: 11400000, guid: 2db576827090eca4a880e1b2d9c2d167, type: 2}
+  - {fileID: 11400000, guid: 98a7836e8ab9d3441a1db5c2f2c04b0c, type: 2}
+  - {fileID: 11400000, guid: bed23e6c7be5f81468212725c40d1fda, type: 2}
+  - {fileID: 11400000, guid: ac6a6400c47e58143b697f1320c8d604, type: 2}
+  - {fileID: 11400000, guid: c65b58e8f35489247a8360ed19f9faec, type: 2}
+  - {fileID: 11400000, guid: 84ab0eef849babd46b5f4e1ac5a97969, type: 2}
+  - {fileID: 11400000, guid: e2cb34c01a8bc684d8cf7cf42fabbe84, type: 2}
+  - {fileID: 11400000, guid: 165fe87446ee17e40ab06caf41e9d8da, type: 2}
+  - {fileID: 11400000, guid: 9a6d7f0bfe7636f4a9dc1efc8fd5026f, type: 2}
+  - {fileID: 11400000, guid: a13fb84141093514b844ee94c3c0d042, type: 2}
+  - {fileID: 11400000, guid: 2d9c1483ea3903b429fb6926cac292e7, type: 2}
+  - {fileID: 11400000, guid: ea1298c52f9207e4ba649f96992e9755, type: 2}
+  - {fileID: 11400000, guid: 5d51cfb49c522ef4d9a0d8049fd1119a, type: 2}
+  - {fileID: 11400000, guid: 28a53d00b7701d748894361e2a4df6b5, type: 2}
+  - {fileID: 11400000, guid: b9087ebbc0c2ea84bbbf4c866ce33dae, type: 2}
+  - {fileID: 11400000, guid: d3c008872216e3d46887cad1338fbed7, type: 2}
+  - {fileID: 11400000, guid: 46a222e63d3a5d044a6ca44b0c9be698, type: 2}
+  - {fileID: 11400000, guid: dd64a9ed1b8760c4cb421fcc30754027, type: 2}

@@ -9,45 +9,43 @@ public class PlayerMovement : MonoBehaviour
 
     #region Event Registers
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         Joystick.OnDragAction += Move;
     }
-    private void OnDisable()
-    {
+    private void OnDisable() {
         Joystick.OnDragAction -= Move;
     }
 
     #endregion
 
-
-    private void Awake()
-    {
+    private void Awake() {
         GetComponents();
     }
-    private void Start()
-    {
+    private void Start() {
+#if PLATFORM_ANDROID
+        Application.targetFrameRate = 60;
+        print("Android");
+#endif
         CheckJoystick();
         SetRigidbodyValues();
     }
 
-    private void Update()
-    {
+    private void Update() {
         ClampPositionToIslandLimit();
-    }
 
-    private void GetComponents()
-    {
+        //if (Application.platform.Equals(RuntimePlatform.WindowsPlayer) || Application.platform.Equals(RuntimePlatform.WindowsEditor))
+        //    Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
+    }   
+
+    private void GetComponents() {
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
-    private void CheckJoystick()
-    {
+    private void CheckJoystick() {
         Joystick _joystick = FindObjectOfType<Joystick>();
 
         //Joystick yok ise hata atýcak.
         Debug.Assert(_joystick, "Add The Joystick In Scene");
-
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         if (!_joystick)
             EditorApplication.isPlaying = false;
 #else
@@ -55,18 +53,15 @@ public class PlayerMovement : MonoBehaviour
         Application.Quit();
 #endif
     }
-    private void SetRigidbodyValues()
-    {
+    private void SetRigidbodyValues() {
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.freezeRotation = true;
     }
 
-    private void Move(Vector2 MoveDirection)
-    {
+    private void Move(Vector2 MoveDirection) {
         _rigidbody2D.velocity = _moveSpeed * MoveDirection.normalized;
     }
-    private void ClampPositionToIslandLimit()
-    {
+    private void ClampPositionToIslandLimit() {
         Island.Instance.GetIslandBorders(out float HorizontalLimit, out float VerticalLimit);
 
         float X = HorizontalLimit;

@@ -7,10 +7,7 @@ using UnityEngine;
 public class IslandScaler : Editor
 {
     private Island _island = null;
-
     private const float _wpSize = 0.1f;
-    private Vector3 sliderPosition = Vector3.zero;
-    private Vector3 _sliderLocation;
 
     private void OnEnable()
     {

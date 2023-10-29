@@ -16,7 +16,7 @@ public class FruitBushSpawnProgressBar : MonoBehaviour
 
     private void Awake()
     {
-        _progressFillBar = transform.GetChild(0).GetComponent<Image>();
+        _progressFillBar = transform.GetChild(1).GetComponent<Image>();
     }
 
     private void OnProgressChange(float progress)

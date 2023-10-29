@@ -10,7 +10,7 @@ public class VariableInitializer : MonoBehaviour
     [ContextMenu("Initial")]
     private void Initialize()
     {
-        foreach (FloatVariable floatVar in FloatVariables) floatVar.Initialize();
-        foreach (IntVariable intVar in IntVariables) intVar.Initialize();
+        foreach (FloatVariable floatVar in FloatVariables) floatVar?.Initialize();
+        foreach (IntVariable intVar in IntVariables) intVar?.Initialize();
     }
 }

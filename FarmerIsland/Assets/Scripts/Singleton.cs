@@ -9,3 +9,12 @@ public abstract class Singleton<T> : MonoBehaviour where T : class
         Instance = this as T;
     }
 }
+
+public abstract class DontDestroySingleton<T> : Singleton<T> where T : class
+{
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
+}

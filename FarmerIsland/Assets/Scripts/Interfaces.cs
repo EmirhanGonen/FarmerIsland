@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class Interfaces : MonoBehaviour
+public interface IInteractable
 {
-
+    public void Interact(PlayerCollector Collector);
 }
