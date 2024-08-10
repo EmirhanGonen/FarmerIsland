@@ -53,7 +53,7 @@ public class Island : Singleton<Island>
     public void GetIslandBorders(out float HorizontalLimit, out float VerticalLimit, bool IncludeThreshold = true) {
         GetUpAndRightBorders(out Vector2 Up, out Vector2 Right);
 
-        // -_limitThreshold pivotdan dolayı objenin yarısı adanın dışına çıkabiliyordu.
+        // -_limitThreshold pivotdan dolayÄ± objenin yarÄ±sÄ± adanÄ±n dÄ±ÅŸÄ±na Ã§Ä±kabiliyordu.
 
         float _threshold = IncludeThreshold ? _limitThreshold : 0.00f;
 

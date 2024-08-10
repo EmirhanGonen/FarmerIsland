@@ -40,7 +40,7 @@ public class Fruit : MonoBehaviour, IInteractable
 
         Vector2 NormalizedDirection = ((transform.position - Collector.transform.position) * 2).normalized;
         Vector2 TargetPoint = (NormalizedDirection * Random.Range(1.50f, 2.00f)) + (Vector2)Collector.transform.position;
-        print($"Target Point: {TargetPoint} -> {Collector.transform.position} - {transform.position} * 2");
+        //print($"Target Point: {TargetPoint} -> {Collector.transform.position} - {transform.position} * 2");
 
         float Duration = Vector2.Distance(Collector.transform.position, transform.position) * 0.1f;
 

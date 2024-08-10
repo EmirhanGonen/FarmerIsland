@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void CheckJoystick() {
         Joystick _joystick = FindObjectOfType<Joystick>();
 
-        //Joystick yok ise hata atýcak.
+        //Joystick yok ise hata atï¿½cak.
         Debug.Assert(_joystick, "Add The Joystick In Scene");
     #if UNITY_EDITOR
         if (!_joystick)
@@ -71,5 +72,10 @@ public class PlayerMovement : MonoBehaviour
         Y = Mathf.Clamp(transform.position.y, -Y, Y);
 
         transform.position = new Vector3(X, Y, transform.position.z);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+       
     }
 }
