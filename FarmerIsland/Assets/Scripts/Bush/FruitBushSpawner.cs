@@ -16,8 +16,10 @@ public class FruitBushSpawner : Singleton<FruitBushSpawner>
 
     #region Encapsulations
 
+    public IntVariable Capacity => _maxSpawnCount;
     private float Progress => _elapsedTime / _spawnInterval.Value;
     private bool CanSpawn => _bushCount.Value < _maxSpawnCount.Value;
+
     private int BushCount
     {
         get => _bushCount.Value;
@@ -29,15 +31,18 @@ public class FruitBushSpawner : Singleton<FruitBushSpawner>
     }
 
     #endregion
+
     #region Events
 
     public static event System.Action OnSpawnedBush = null;
     public static event System.Action<IntVariable, IntVariable> OnChangedBushCount = null;
 
     public delegate void OnProgressUpdateHandler(float Progress);
+
     public static event OnProgressUpdateHandler OnProgressUpdate = null;
 
     #endregion
+
     #region Data's
 
     private FruitBushDataList _dataList = null;
@@ -45,28 +50,36 @@ public class FruitBushSpawner : Singleton<FruitBushSpawner>
 
     #endregion
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         FruitBush.OnCollected += CollectedBush;
 
         PlayerLevel.OnPlayerLevelUp += GetNewData;
         PlayerLevel.OnPlayerLevelUp += UpgradeByLevel;
     }
-    private void OnDisable() {
+
+    private void OnDisable()
+    {
         FruitBush.OnCollected -= CollectedBush;
 
         PlayerLevel.OnPlayerLevelUp -= GetNewData;
         PlayerLevel.OnPlayerLevelUp -= UpgradeByLevel;
     }
 
-    protected override void Awake() {
+    protected override void Awake()
+    {
         base.Awake();
 
         _dataList = Resources.Load<FruitBushDataList>(DATA_LIST_PATH);
     }
-    private void Start() {
+
+    private void Start()
+    {
         BushCount = 0;
     }
-    private void Update() {
+
+    private void Update()
+    {
         if (!CanSpawn)
         {
             _elapsedTime = 0.00f;
@@ -81,7 +94,8 @@ public class FruitBushSpawner : Singleton<FruitBushSpawner>
         OnProgressUpdate?.Invoke(Progress);
     }
 
-    private void Spawn() {
+    private void Spawn()
+    {
         Island.Instance.GetIslandBorders(out float HorizontalBorder, out float VerticalBorder);
 
         Vector2 SpawnLocation = new Vector2(Random.Range(-HorizontalBorder, HorizontalBorder), Random.Range(-VerticalBorder, VerticalBorder));
@@ -93,26 +107,35 @@ public class FruitBushSpawner : Singleton<FruitBushSpawner>
         OnSpawnedBush?.Invoke();
     }
 
-    private void CollectedBush() {
+    private void CollectedBush()
+    {
         BushCount--;
     }
-    private void ProgressFilled() {
+
+    private void ProgressFilled()
+    {
         _elapsedTime = 0.00f;
         Spawn();
     }
 
-    private void GetNewData(int Level) {
+    private void GetNewData(int Level)
+    {
         _canSpawnBushs.Add(_dataList.GetDataByLevel(Level));
     }
 
-    private void UpgradeByLevel(int Level) {
-        _maxSpawnCount.Value = 10 * Level;
+    private void UpgradeByLevel(int Level)
+    {
+        _maxSpawnCount.Value = GetCapacityByLevel(Level);
     }
+
+    public int GetCapacityByLevel(int level) => 10 * level;
+
 
     public FruitBushData GetRandomSpawnableData() => _canSpawnBushs[Random.Range(0, _canSpawnBushs.Count)];
 
 
-    public FruitBushData GetBushByFruitData<T>(T FruitData) where T : FruitData {
+    public FruitBushData GetBushByFruitData<T>(T FruitData) where T : FruitData
+    {
         foreach (FruitBushData bush in _canSpawnBushs)
         {
             if (!bush.FruitData.Equals(FruitData))
