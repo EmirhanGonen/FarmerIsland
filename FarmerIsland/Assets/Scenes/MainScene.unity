@@ -425,7 +425,7 @@ RectTransform:
   m_Children:
   - {fileID: 820702614}
   m_Father: {fileID: 724042525}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -616,14 +616,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153550803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 593617404}
   m_Father: {fileID: 724042525}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -646,6 +646,8 @@ MonoBehaviour:
   _newFruitName: {fileID: 2029818920}
   _oldIslandSize: {fileID: 1789318519}
   _newIslandSize: {fileID: 252651944}
+  _oldIslandCapacityCountText: {fileID: 1789318519}
+  _newIslandCapacityCountText: {fileID: 252651944}
 --- !u!224 &178028961 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 924392770664904180, guid: ff8bf6af116418944a6aa60829473586, type: 3}
@@ -1075,7 +1077,7 @@ GameObject:
   - component: {fileID: 252651945}
   - component: {fileID: 252651944}
   m_Layer: 5
-  m_Name: Text (TMP)_1
+  m_Name: NewIslandCapacityCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2587,10 +2589,10 @@ RectTransform:
   - {fileID: 1363119254}
   - {fileID: 1755275412}
   - {fileID: 1359672183}
-  - {fileID: 153550804}
   - {fileID: 1470821843}
   - {fileID: 1018035870}
   - {fileID: 68749409}
+  - {fileID: 153550804}
   m_Father: {fileID: 280704310}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4386,7 +4388,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 724042525}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -7072,7 +7074,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 724042525}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8742,7 +8744,7 @@ GameObject:
   - component: {fileID: 1789318520}
   - component: {fileID: 1789318519}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: OldIslandCapacityCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
